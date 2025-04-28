@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Scan & Learn',
       theme: ThemeData(primarySwatch: Colors.green),
       home: const HomeScreen(),
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
     );
   }
 }

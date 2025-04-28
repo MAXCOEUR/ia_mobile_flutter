@@ -171,14 +171,32 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             const Text("Choisissez ou capturez une image"),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _isModelLoaded ? () => _pickImage(ImageSource.gallery) : null,
-              child: const Text("Importer une image"),
+            Container(
+                margin: EdgeInsets.all(10),
+                child:ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green[400],
+                    minimumSize: const Size(double.infinity, 50),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  ),
+                  onPressed: _isModelLoaded ? () => _pickImage(ImageSource.gallery) : null,
+                  icon: const Icon(Icons.photo_library),
+                  label: const Text("Importer une image", style: TextStyle(fontSize: 18)),
+                ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _isModelLoaded ? () => _pickImage(ImageSource.camera) : null,
-              child: const Text("Prendre une photo"),
+            Container(
+              margin: EdgeInsets.all(10),
+              child:ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green[400],
+                  minimumSize: const Size(double.infinity, 50),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                ),
+                onPressed: _isModelLoaded ? () => _pickImage(ImageSource.camera) : null,
+                icon: const Icon(Icons.camera_alt),
+                label: const Text("Prendre une photo", style: TextStyle(fontSize: 18)),
+              ),
             ),
             if (_isLoading) const CircularProgressIndicator(),
             const SizedBox(height: 20),

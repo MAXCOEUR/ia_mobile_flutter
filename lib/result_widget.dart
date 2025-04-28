@@ -38,10 +38,20 @@ class ResultWidget extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () => _launchGoogleSearch(label),
-          child: const Text("Rechercher sur Google"),
-        ),
+        Container(
+          margin: EdgeInsets.all(10),
+          child: ElevatedButton.icon(
+            onPressed: () => _launchGoogleSearch(label),
+            icon: const Icon(Icons.search),
+            label: const Text("Rechercher sur Google"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.green[400],
+              minimumSize: const Size(double.infinity, 50),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            ),
+          ),
+        )
+        
       ],
     );
   }
